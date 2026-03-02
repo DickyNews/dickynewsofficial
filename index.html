@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <meta property="og:title" content="Dicky News Official | Best WhatsApp MOD">
-    <meta property="og:description" content="Update WhatsApp GB, MB, RC, Delta Terbaru & Tutorial Anti Banned Lengkap!">
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png">
-    <meta property="og:url" content="https://dickynews.github.io/dickynewsofficial">
-    <meta property="og:type" content="website">
-    
-    <meta name="description" content="Best WhatsApp MOD terlengkap dan terupdate by Dicky News.">
-    <title>Dicky News Official | Best WhatsApp MOD</title>
+    <title>Dicky News Official</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -39,6 +31,7 @@
             --text-main: #1d1d1f;
         }
 
+        /* FIX: Kunci layar agar tidak bisa geser kanan kiri */
         html, body {
             max-width: 100%;
             overflow-x: hidden;
@@ -65,6 +58,7 @@
             pointer-events: none;
         }
 
+        /* FIX: Wrapper harus 100% lebar layar hp */
         .wrapper { 
             width: 100%;
             max-width: 850px; 
@@ -72,7 +66,7 @@
             padding: 40px 15px;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Tambahan pengaman */
         }
 
         header { text-align: center; margin-bottom: 30px; width: 100%; }
@@ -83,6 +77,7 @@
             margin: 0; font-weight: 900; color: #1d1d1f;
             background: linear-gradient(to bottom, #1d1d1f 60%, #007AFF);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            word-wrap: break-word;
         }
 
         .modern-badge { 
@@ -103,12 +98,17 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
+        @media (min-width: 601px) {
+            .glass-card:hover { transform: scale(1.02) translateY(-5px); background: rgba(255, 255, 255, 0.9); }
+        }
+
         .download-box { padding: 20px 22px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 
         .btn-download {
             background: var(--primary); color: white; padding: 12px 20px; border-radius: 14px;
             text-decoration: none; font-weight: 700; font-size: 12px;
             box-shadow: 0 5px 15px rgba(0, 122, 255, 0.2);
+            white-space: nowrap;
         }
 
         .info-card { padding: 22px; }
@@ -116,16 +116,23 @@
 
         .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
         
-        .social-grid { display: flex; justify-content: center; gap: 12px; margin-top: 30px; }
-        .social-icon { width: 52px; height: 52px; background: white; display: flex; align-items: center; justify-content: center; border-radius: 16px; font-size: 20px; color: #1d1d1f; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .social-grid { display: flex; justify-content: center; gap: 12px; margin-top: 30px; width: 100%; }
+        .social-icon { width: 52px; height: 52px; background: white; display: flex; align-items: center; justify-content: center; border-radius: 16px; font-size: 20px; color: #1d1d1f; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
 
+        footer { text-align: center; padding: 40px 0; opacity: 0.6; font-size: 11px; width: 100%; }
+
+        /* FIX MOBILE CENTER */
         @media (max-width: 600px) {
             .wrapper { padding: 25px 12px; }
             .grid-info { grid-template-columns: 1fr; }
             .download-box { flex-direction: column; text-align: center; padding: 25px 15px; }
             .btn-download { width: 100%; }
             .info-card { text-align: center; }
+            .info-card p { justify-content: center; display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
+            .section-title { justify-content: center; }
             h1 { font-size: 28px; }
+            /* Mencegah animasi merusak lebar layar */
+            [data-aos] { max-width: 100%; overflow: hidden; }
         }
     </style>
 </head>
@@ -136,7 +143,7 @@
 <div class="wrapper">
     <header data-aos="zoom-out-down">
         <h1>Dicky News Official</h1>
-        <span class="sub-tag" style="letter-spacing: 2px; font-size: 9px; opacity: 0.6; font-weight: 800; display: block; margin-top: 5px;">400K SUBSCRIBERS ENTHUSIAST</span>
+        <span class="sub-tag" style="letter-spacing: 2px; font-size: 9px; opacity: 0.6; font-weight: 800; display: block; margin-top: 5px;">BEST WHATSAPP MOD</span>
     </header>
 
     <div style="text-align: center; width: 100%;">
@@ -172,9 +179,10 @@
     <div class="glass-card info-card" data-aos="zoom-in">
         <p><i class="fas fa-check-circle" style="color: var(--primary)"></i> Tidak Perlu Aktivator.</p>
         <p><i class="fas fa-archive" style="color: var(--primary)"></i> Pakai <a id="link-zarchiver" href="#" target="_blank" style="color:var(--primary); font-weight:700; text-decoration:none;">Zarchiver</a> untuk ekstrak.</p>
+        <p><i class="fas fa-forward" style="color: var(--primary)"></i> Skip jika sudah punya versi sama.</p>
     </div>
 
-    <div class="section-title" data-aos="fade-right"><i class="fab fa-youtube"></i> Tutorial Instalasi</div>
+    <div class="section-title" data-aos="fade-right" style="margin-left: 5px;"><i class="fab fa-youtube"></i> Tutorial Instalasi</div>
     <div class="glass-card download-box" data-aos="zoom-in-up" style="background: #ff3b30; color: white; border: none;">
         <span style="color: white; font-weight: 600;">Video Cara Download & Install</span>
         <a id="link-tutorial" href="#" target="_blank" class="btn-download" style="background: white; color: #ff3b30;"><i class="fab fa-youtube"></i> TONTON</a>
@@ -185,16 +193,26 @@
             <span class="section-title">Tata Cara :</span>
             <p>• Matikan Play Protect</p>
             <p>• Wajib Punya WA ORI</p>
+            <p>• Tautkan WA GB ke WA ORI</p>
         </div>
         <div class="glass-card info-card" data-aos="fade-left">
             <span class="section-title">Penting :</span>
             <p>⚠️ Gunakan Tautan Perangkat.</p>
+            <p>⚠️ Login Nomor = Resiko Banned.</p>
         </div>
+    </div>
+
+    <div class="glass-card info-card" data-aos="slide-up" style="border-left: 6px solid #ff3b30; margin-top: 20px; text-align: center;">
+        <span class="section-title" style="color: #ff3b30; justify-content: center;"><i class="fas fa-bolt"></i> WA MOD ENHANCER (ROOT)</span>
+        <p>Atasi Memerlukan WA Resmi | Anti Banned</p>
+        <a id="link-wa-root" href="#" target="_blank" style="color:var(--primary); font-weight:800; text-decoration:none;">KLIK UNTUK DETAIL</a>
     </div>
 
     <div class="social-grid" data-aos="fade-up">
         <a href="https://youtube.com/@dickynews" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
         <a href="https://www.instagram.com/dickynews" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@dickynewsyt_" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/dickynews45" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
     </div>
 
     <footer>
@@ -212,9 +230,24 @@
         document.getElementById('link-litex').href = LINK_SETTINGS.lite_x_WA;
         document.getElementById('link-tutorial').href = LINK_SETTINGS.video_tutorial;
         document.getElementById('link-zarchiver').href = LINK_SETTINGS.zarchiver;
+        document.getElementById('link-wa-root').href = LINK_SETTINGS.WA_root_detail;
 
-        AOS.init({ duration: 700, once: false, mirror: true });
+        AOS.init({ 
+            duration: 700, 
+            once: false, 
+            mirror: true,
+            offset: 30,
+            disable: false
+        });
     });
+
+    if (!('ontouchstart' in window)) {
+        window.addEventListener('mousemove', (e) => {
+            const root = document.documentElement;
+            root.style.setProperty('--m-x', (e.clientX / window.innerWidth) * 100 + '%');
+            root.style.setProperty('--m-y', (e.clientY / window.innerHeight) * 100 + '%');
+        });
+    }
 
     let baseCount = 2654844;
     let countEl = document.getElementById('count');
