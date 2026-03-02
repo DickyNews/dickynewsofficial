@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dicky News Official | Modern Glass</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicky News Official | Full Motion Glass</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -46,29 +46,21 @@
         .bg-blur {
             position: fixed; width: 100%; height: 100%; top: 0; z-index: -1;
             background: radial-gradient(circle at var(--m-x, 50%) var(--m-y, 50%), rgba(0, 122, 255, 0.15) 0%, transparent 45%);
-            pointer-events: none; /* Cegah gangguan scroll */
+            pointer-events: none;
         }
 
         .wrapper { 
             width: 100%; max-width: 850px; 
             margin: 0 auto; padding: 40px 20px;
             display: flex; flex-direction: column;
-            will-change: transform; /* Optimalisasi performa */
         }
 
-        header { text-align: center; margin-bottom: 40px; width: 100%; }
-
+        header { text-align: center; margin-bottom: 40px; }
         h1 { 
             font-family: 'Poppins', sans-serif; font-size: clamp(28px, 8vw, 54px); 
-            margin: 0; padding: 0; font-weight: 900; color: #1d1d1f;
+            margin: 0; font-weight: 900; color: #1d1d1f;
             background: linear-gradient(to bottom, #1d1d1f 60%, #007AFF);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-
-        .sub-tag { 
-            font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
-            font-size: 10px; opacity: 0.6; margin-top: 5px; display: block;
         }
 
         .modern-badge { 
@@ -85,7 +77,12 @@
             border-radius: 28px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.04);
             margin-bottom: 20px; width: 100%;
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Hover Effect PC */
+        @media (min-width: 601px) {
+            .glass-card:hover { transform: scale(1.02) translateY(-5px); background: rgba(255, 255, 255, 0.9); }
         }
 
         .download-box { padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
@@ -93,29 +90,27 @@
         .btn-download {
             background: var(--primary); color: white; padding: 12px 24px; border-radius: 14px;
             text-decoration: none; font-weight: 700; font-size: 13px;
-            white-space: nowrap; box-shadow: 0 5px 15px rgba(0, 122, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.2);
         }
 
-        .info-card { padding: 25px; text-align: left; }
+        .info-card { padding: 25px; }
         .section-title { color: var(--primary); font-weight: 800; display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 18px; }
 
         .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         
         .social-grid { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .social-icon { width: 55px; height: 55px; background: white; display: flex; align-items: center; justify-content: center; border-radius: 18px; font-size: 22px; color: #1d1d1f; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .social-icon { width: 55px; height: 55px; background: white; display: flex; align-items: center; justify-content: center; border-radius: 18px; font-size: 22px; color: #1d1d1f; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .social-icon:hover { transform: translateY(-5px); background: var(--primary); color: white; }
 
         footer { text-align: center; padding: 50px 0; opacity: 0.6; font-size: 12px; }
 
         @media (max-width: 600px) {
-            .wrapper { padding: 30px 15px; }
             .grid-info { grid-template-columns: 1fr; }
-            .download-box { flex-direction: column; text-align: center; padding: 30px 20px; }
-            .btn-download { width: 100%; text-align: center; }
+            .download-box { flex-direction: column; text-align: center; }
+            .btn-download { width: 100%; }
             .info-card { text-align: center; }
             .info-card p { justify-content: center; display: flex; align-items: center; gap: 8px; }
             .section-title { justify-content: center; }
-            h1 { font-size: 32px; }
-            .glass-card { transform: none !important; } /* Matikan animasi manual hover di HP */
         }
     </style>
 </head>
@@ -124,74 +119,74 @@
 <div class="bg-blur"></div>
 
 <div class="wrapper">
-    <header data-aos="fade-down" data-aos-once="true">
+    <header data-aos="zoom-out-down">
         <h1>Dicky News Official</h1>
-        <span class="sub-tag">400K SUBSCRIBERS ENTHUSIAST</span>
+        <span class="sub-tag" style="letter-spacing: 3px; font-size: 10px; opacity: 0.6; font-weight: 800;">400K SUBSCRIBERS ENTHUSIAST</span>
     </header>
 
     <div style="text-align: center; width: 100%;">
-        <div class="modern-badge" data-aos="zoom-in" data-aos-once="true">
+        <div class="modern-badge" data-aos="fade-up">
             <span style="font-size: 11px; font-weight: 800; opacity: 0.6;">TOTAL VISITORS:</span>
-            <span class="count-value" id="count">0</span>
+            <span class="count-value" id="count" style="font-weight: 800; color: var(--primary);">0</span>
         </div>
     </div>
 
     <div class="download-list">
-        <div class="glass-card download-box" data-aos="fade-up" data-aos-delay="50" data-aos-once="true">
+        <div class="glass-card download-box" data-aos="fade-right">
             <span>GB WA Pro Terbaru V25.96</span>
             <a id="link-gb" href="#" target="_blank" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
-        <div class="glass-card download-box" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+        <div class="glass-card download-box" data-aos="fade-left">
             <span>MB WA Terbaru V2.6.2</span>
             <a id="link-mb" href="#" target="_blank" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
-        <div class="glass-card download-box" data-aos="fade-up" data-aos-delay="150" data-aos-once="true">
+        <div class="glass-card download-box" data-aos="fade-up">
             <span>RC WA Terbaru V10.61</span>
             <a id="link-rc" href="#" target="_blank" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
-        <div class="glass-card download-box" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        <div class="glass-card download-box" data-aos="zoom-in">
             <span>Delta WA Terbaru V3.4.3</span>
             <a id="link-delta" href="#" target="_blank" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
-        <div class="glass-card download-box" data-aos="fade-up" data-aos-delay="250" data-aos-once="true">
+        <div class="glass-card download-box" data-aos="fade-down">
             <span>Lite X WA Terbaru V2.70.1</span>
             <a id="link-litex" href="#" target="_blank" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
     </div>
 
-    <div class="glass-card info-card" data-aos="fade-up" data-aos-once="true">
+    <div class="glass-card info-card" data-aos="flip-up">
         <p><i class="fas fa-check-circle" style="color: var(--primary)"></i> Tidak Perlu Aktivator.</p>
         <p><i class="fas fa-archive" style="color: var(--primary)"></i> Ekstrak File pakai <a id="link-zarchiver" href="#" target="_blank" style="color:var(--primary); font-weight:700; text-decoration:none;">Zarchiver</a>.</p>
         <p><i class="fas fa-forward" style="color: var(--primary)"></i> Skip Jika Sudah Punya Versi Sama.</p>
     </div>
 
-    <div class="section-title" data-aos="fade-up" data-aos-once="true"><i class="fab fa-youtube"></i> Tutorial Instalasi</div>
-    <div class="glass-card download-box" data-aos="zoom-in" data-aos-once="true" style="background: #ff3b30; color: white; border: none;">
+    <div class="section-title" data-aos="fade-right"><i class="fab fa-youtube"></i> Tutorial Instalasi</div>
+    <div class="glass-card download-box" data-aos="zoom-in-up" style="background: #ff3b30; color: white; border: none;">
         <span style="color: white;">Video Cara Download & Install</span>
         <a id="link-tutorial" href="#" target="_blank" class="btn-download" style="background: white; color: #ff3b30;"><i class="fab fa-youtube"></i> TONTON</a>
     </div>
 
     <div class="grid-info" style="margin-top:20px;">
-        <div class="glass-card info-card" data-aos="fade-right" data-aos-once="true">
+        <div class="glass-card info-card" data-aos="fade-right">
             <span class="section-title">Tata Cara :</span>
             <p>• Matikan Play Protect</p>
             <p>• Wajib Punya WA ORI</p>
             <p>• Tautkan WA GB ke WA ORI</p>
         </div>
-        <div class="glass-card info-card" data-aos="fade-left" data-aos-once="true">
+        <div class="glass-card info-card" data-aos="fade-left">
             <span class="section-title">Penting :</span>
             <p>⚠️ Gunakan Tautan Perangkat.</p>
             <p>⚠️ Login Nomor = Resiko Banned.</p>
         </div>
     </div>
 
-    <div class="glass-card info-card" data-aos="zoom-in-up" data-aos-once="true" style="border-left: 6px solid #ff3b30; margin-top: 30px; text-align: center;">
+    <div class="glass-card info-card" data-aos="slide-up" style="border-left: 6px solid #ff3b30; margin-top: 30px; text-align: center;">
         <span class="section-title" style="color: #ff3b30; justify-content: center;"><i class="fas fa-bolt"></i> WA MOD ENHANCER (ROOT)</span>
         <p>Atasi Memerlukan WA Resmi | Permanen Bisa Login Nomor</p>
         <a id="link-wa-root" href="#" target="_blank" style="color:var(--primary); font-weight:800; text-decoration:none;">KLIK UNTUK DETAIL</a>
     </div>
 
-    <div class="social-grid" data-aos="fade-up" data-aos-once="true">
+    <div class="social-grid" data-aos="fade-up">
         <a href="https://youtube.com/@dickynews" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
         <a href="https://www.instagram.com/dickynews" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
         <a href="https://www.tiktok.com/@dickynewsyt_" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
@@ -206,7 +201,7 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Link Init
+        // Link Mapping
         document.getElementById('link-gb').href = LINK_SETTINGS.gb_WA_pro;
         document.getElementById('link-mb').href = LINK_SETTINGS.mb_WA;
         document.getElementById('link-rc').href = LINK_SETTINGS.rc_WA;
@@ -216,43 +211,31 @@
         document.getElementById('link-zarchiver').href = LINK_SETTINGS.zarchiver;
         document.getElementById('link-wa-root').href = LINK_SETTINGS.WA_root_detail;
 
-        // AOS Init - Setting 'once: true' untuk mencegah glitch saat scroll balik
-        AOS.init({ duration: 600, once: true, offset: 100 });
+        // AOS Init: once: false agar animasi muncul terus saat scroll naik/turun
+        AOS.init({ 
+            duration: 800, 
+            once: false, 
+            mirror: true,
+            offset: 50 
+        });
     });
 
-    // Perbaikan: Hanya jalankan deteksi mouse jika bukan perangkat sentuh (HP)
+    // Mouse Glow (PC only)
     if (!('ontouchstart' in window)) {
         window.addEventListener('mousemove', (e) => {
             const root = document.documentElement;
             root.style.setProperty('--m-x', (e.clientX / window.innerWidth) * 100 + '%');
             root.style.setProperty('--m-y', (e.clientY / window.innerHeight) * 100 + '%');
         });
-
-        // Tilt Effect hanya untuk PC
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 15;
-                const rotateY = (centerX - x) / 15;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-            });
-        });
     }
 
-    // Count Animation (Ringan)
+    // Smooth Count Animation
     let baseCount = 2654844;
     let countEl = document.getElementById('count');
-    let current = baseCount - 50;
+    let current = baseCount - 100;
     function updateCount() {
         if(current < baseCount) {
-            current += 1;
+            current += 2;
             countEl.innerText = current.toLocaleString('id-ID');
             requestAnimationFrame(updateCount);
         } else {
