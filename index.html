@@ -63,7 +63,7 @@
             width: 100%;
             max-width: 850px; 
             margin: 0 auto; 
-            padding: 40px 15px;
+            padding: 40px 15px; 
             display: flex;
             flex-direction: column;
             overflow-x: hidden; /* Tambahan pengaman */
@@ -249,19 +249,25 @@
         });
     }
 
-    let baseCount = 2654844;
+    // LOGIKA PENAMBAH VISITOR OTOMATIS
     let countEl = document.getElementById('count');
-    let current = baseCount - 50;
-    function updateCount() {
-        if(current < baseCount) {
-            current += 1;
-            countEl.innerText = current.toLocaleString('id-ID');
-            requestAnimationFrame(updateCount);
+    let savedCount = localStorage.getItem('site_visitor_count');
+    let visitorCount = savedCount ? parseInt(savedCount) : 9674744;
+    
+    visitorCount++;
+    localStorage.setItem('site_visitor_count', visitorCount);
+    
+    let startCount = visitorCount - 20;
+    function animateCounter() {
+        if(startCount < visitorCount) {
+            startCount++;
+            countEl.innerText = startCount.toLocaleString('id-ID');
+            requestAnimationFrame(animateCounter);
         } else {
-            countEl.innerText = baseCount.toLocaleString('id-ID');
+            countEl.innerText = visitorCount.toLocaleString('id-ID');
         }
     }
-    updateCount();
+    animateCounter();
 </script>
 </body>
 </html>
